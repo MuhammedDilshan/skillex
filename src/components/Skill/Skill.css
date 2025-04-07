@@ -1,0 +1,126 @@
+.skill {
+    padding: 100px 0;
+
+}
+
+.skill .skill_top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.skill .skill_top .left_content {
+    width: 44%;
+}
+
+.skill .skill_top .left_content h6 {
+    font-size: 40px;
+    color: #1E1E2F;
+    font-weight: 700;
+}
+
+.skill .skill_top .right_content {
+    width: 50%;
+}
+
+.skill .skill_top .right_content p {
+    font-size: 20px;
+    color: #1E1E2F;
+}
+
+.skill_bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill_bottom .bottom_left {
+    width: 35%;
+}
+
+.skill_bottom .bottom_left .skill_details {
+    display: flex;
+}
+
+.skill_bottom .bottom_left .skill_details .image_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 18px;
+}
+
+.skill_bottom .bottom_left .skill_details .image_details .img_icon {
+    height: 56px;
+    width: 56px;
+    background-color: #FFFFFF;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.skill_bottom .bottom_left .skill_details .text_details h6 {
+    font-size: 20px;
+    color: #1E1E2F;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.skill_bottom .bottom_left .skill_details .text_details p {
+    font-size: 16px;
+    color: #1E1E2FCC;
+    font-weight: 400;
+    width: 60%;
+}
+
+.skill_bottom .bottom_right {
+    width: 65%;
+    position: relative;
+}
+
+.skill_bottom .bottom_right .count_box {
+    background-color: #97C680;
+    display: flex;
+    justify-content: center;
+    padding: 24px 48px;
+    width: 60%;
+    position: absolute;
+    top: -70px;
+    right: 80px;
+}
+
+.skill_bottom .bottom_right .count_box .experience {
+    display: flex;
+    padding: 0 36px;
+    align-items: center;
+}
+
+
+
+.skill_bottom .bottom_right .count_box .experience:first-child {
+    border-right: 1px solid #1E1E2F;
+}
+
+.skill_bottom .bottom_right .count_box .experience .count {
+    font-size: 52px;
+    margin-right: 12px;
+    color: #1E1E2F;
+}
+
+.skill_bottom .bottom_right .count_box .experience .count_text h6 {
+    font-size: 14px;
+    color: #1E1E2F;
+}
+
+
+
+.skill_bottom .bottom_right .bottom_right_image {
+    width: 100%;
+}
+
+
+.skill_bottom .bottom_right .bottom_right_image img {
+    width: 100%;
+    display: block;
+}

@@ -1,0 +1,147 @@
+.banner {
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner .banner_textContainer {
+    width: 30%;
+}
+
+.banner .banner_textContainer .main_text {
+    margin-bottom: 50px;
+}
+
+.banner .banner_textContainer .main_text h4 {
+    font-size: 70px;
+    font-weight: 700;
+    color: #1E1E2F;
+}
+
+.banner .passion {
+    display: flex;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 4px 0px;
+    position: relative;
+    z-index: 99;
+}
+
+.banner .passion input {
+    padding: 30px 13px 30px 51px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: #1E1E2F;
+}
+
+.banner .passion .go_btn {
+    background-color: #97C680;
+    padding: 30px 32px;
+    color: #1E1E2F;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* 
+.banner_ImgContainer {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner_ImgContainer .image_box {
+    width: 50%;
+    position: relative;
+}
+
+.banner_ImgContainer .image_box:nth-child(2),
+.banner_ImgContainer .image_box:nth-child(3) {
+    width: 25%;
+}
+
+.banner_ImgContainer .image_box img {
+    display: block;
+    width: 100%;
+}
+
+.banner_ImgContainer .image_box .inside_text {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.banner_ImgContainer .image_box .inside_text h6 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.banner_ImgContainer .image_box .inside_text p {
+    font-size: 14px;
+    color: #fff;
+} */
+
+.banner_ImgContainer {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner_ImgContainer .image_box {
+    width: 50%;
+    position: relative;
+    transition: transform 0.4s ease, width 0.4s ease;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 400px;
+}
+
+.banner_ImgContainer .image_box:nth-child(2),
+.banner_ImgContainer .image_box:nth-child(3) {
+    width: 25%;
+    height: 300px;
+}
+
+.banner_ImgContainer .image_box img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.banner_ImgContainer .image_box .inside_text {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.banner_ImgContainer .image_box .inside_text h6 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.banner_ImgContainer .image_box .inside_text p {
+    font-size: 14px;
+    color: #fff;
+}
+
+
+.banner_ImgContainer:hover .image_box {
+    width: 25% !important;
+}
+
+
+.banner_ImgContainer .image_box:hover {
+    transform: scale(1.1);
+    z-index: 2;
+    width: 50% !important;
+}

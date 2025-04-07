@@ -1,0 +1,23 @@
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(357.09deg, #F8F4F1 60%, #FEFEFF 98%);
+
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}

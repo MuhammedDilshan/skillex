@@ -1,0 +1,37 @@
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav li {
+    color: #1E1E2F;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.header_buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.header_buttons .login {
+    background-color: #fff;
+    color: #1E1E2F;
+    font-size: 16px;
+}
+
+.header_buttons .free {
+    background-color: #1E1E2F;
+    padding: 10px 40px;
+    border-radius: 100px;
+    color: #fff;
+}
