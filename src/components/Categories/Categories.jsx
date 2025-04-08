@@ -33,7 +33,7 @@ const Categories = () => {
         <div
           className="card_item scroll-card"
           style={{
-            transform: `translateY(${scrollY * 0.1}px)`, // Moves down as you scroll
+            transform: `translateY(${scrollY * 0.1}px)`, 
             transition: "transform 0.2s ease-out",
           }}
         >
@@ -46,7 +46,7 @@ const Categories = () => {
         <div
           className="card_item scroll-card"
           style={{
-            transform: `translateY(${scrollY * 0.1}px)`, // Moves down as you scroll
+            transform: `translateY(${scrollY * 0.1}px)`, 
             transition: "transform 0.2s ease-out",
           }}
         >
@@ -59,7 +59,7 @@ const Categories = () => {
         <div
           className="card_item scroll-card"
           style={{
-            transform: `translateY(${scrollY * 0.1}px)`, // Moves down as you scroll
+            transform: `translateY(${scrollY * 0.1}px)`, 
             transition: "transform 0.2s ease-out",
           }}
         >
@@ -72,7 +72,7 @@ const Categories = () => {
         <div
           className="card_item scroll-card"
           style={{
-            transform: `translateY(${scrollY * 0.1}px)`, // Moves down as you scroll
+            transform: `translateY(${scrollY * 0.1}px)`, 
             transition: "transform 0.2s ease-out",
           }}
         >

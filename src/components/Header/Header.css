@@ -107,4 +107,39 @@ header nav li {
         color: #1E1E2F;
         cursor: pointer;
     }
+
+    .banner .banner_textContainer .main_text h4 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width:600px) {
+    .menu_box {
+        width: 100%;
+    }
+
+    .banner .passion {
+        width: 80%;
+    }
+
+    .banner .passion input {
+        padding: 14px 13px 24px 30px;
+        font-size: 14px;
+    }
+
+    .banner .passion .go_btn {
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width:480px) {
+    .banner_ImgContainer .image_box {
+        height: 280px;
+    }
+
+    .banner_ImgContainer .image_box:nth-child(2),
+    .banner_ImgContainer .image_box:nth-child(3) {
+
+        height: 280px;
+    }
 }
