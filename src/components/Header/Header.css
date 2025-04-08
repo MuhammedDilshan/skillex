@@ -23,15 +23,88 @@ header nav li {
     gap: 20px;
 }
 
+.mobile_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.mobile_buttons .login,
 .header_buttons .login {
     background-color: #fff;
     color: #1E1E2F;
     font-size: 16px;
 }
 
+.mobile_buttons .free,
 .header_buttons .free {
     background-color: #1E1E2F;
     padding: 10px 40px;
     border-radius: 100px;
     color: #fff;
+}
+
+.menu_icon {
+    font-size: 34px;
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width:860px) {
+    header nav li {
+        display: none;
+    }
+
+    .header_buttons .login,
+    .header_buttons .free {
+        display: none;
+    }
+
+    .menu_icon {
+        display: block;
+    }
+
+    .menu_box {
+        width: 70%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .menu_box {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 999;
+        padding: 20px;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .close_icon {
+        font-size: 32px;
+        text-align: right;
+        cursor: pointer;
+    }
+
+    .mobile_nav {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .mobile_nav li {
+        font-size: 18px;
+        color: #1E1E2F;
+        cursor: pointer;
+    }
 }

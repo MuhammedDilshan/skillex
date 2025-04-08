@@ -124,3 +124,59 @@
     width: 100%;
     display: block;
 }
+
+@media (max-width:1100px) {
+    .skill .skill_top {
+        flex-direction: column;
+    }
+
+    .skill .skill_top .right_content {
+        display: none;
+    }
+
+    .skill_bottom {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .skill .skill_top .left_content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .skill_bottom .bottom_left,
+    .skill_bottom .bottom_right {
+        width: 100%;
+    }
+
+    .skill_bottom .bottom_left .skill_details {
+        justify-content: center;
+
+    }
+}
+
+@media (max-width:640px) {
+    .skill_bottom .bottom_right .count_box .experience .count {
+        font-size: 22px;
+
+    }
+
+    .skill_bottom .bottom_right .count_box {
+        padding: 20px 40px;
+        right: 30px;
+    }
+
+    .skill_bottom .bottom_right .count_box .experience {
+        padding: 0 26px;
+    }
+
+    .skill_bottom .bottom_right .count_box .experience .count_text h6 {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:480px) {
+    .skill .skill_top .left_content h6 {
+        font-size: 30px;
+    }
+}

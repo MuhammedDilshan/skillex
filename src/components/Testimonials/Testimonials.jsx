@@ -1,105 +1,4 @@
-// import React from "react";
-// import "./Testimonials.css";
-// import Avatar from "../../assets/avatar.svg";
-// import prev from "../../assets/arrow-l.svg";
-// import next from "../../assets/arrow-r.svg";
-
-// const Testimonials = () => {
-//   return (
-//     <div className="testimonials">
-//       <h6>What our customer say</h6>
-//       <div className="slider_items">
-//         <div className="item">
-//           <p>
-//             The explanations are clear, the teachers are responsible and
-//             friendly, and the homework is real practice
-//           </p>
-//           <div className="user_info">
-//             <div className="user_avatar">
-//               <img src={Avatar} alt="" />
-//             </div>
-//             <div className="user_detail">
-//               <h6>Rob Zuber</h6>
-//               <p>CEO</p>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="item">
-//           <p>
-//             The explanations are clear, the teachers are responsible and
-//             friendly, and the homework is real practice
-//           </p>
-//           <div className="user_info">
-//             <div className="user_avatar">
-//               <img src={Avatar} alt="" />
-//             </div>
-//             <div className="user_detail">
-//               <h6>Rob Zuber</h6>
-//               <p>CEO</p>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="item">
-//           <p>
-//             The explanations are clear, the teachers are responsible and
-//             friendly, and the homework is real practice
-//           </p>
-//           <div className="user_info">
-//             <div className="user_avatar">
-//               <img src={Avatar} alt="" />
-//             </div>
-//             <div className="user_detail">
-//               <h6>Rob Zuber</h6>
-//               <p>CEO</p>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="item">
-//           <p>
-//             The explanations are clear, the teachers are responsible and
-//             friendly, and the homework is real practice
-//           </p>
-//           <div className="user_info">
-//             <div className="user_avatar">
-//               <img src={Avatar} alt="" />
-//             </div>
-//             <div className="user_detail">
-//               <h6>Rob Zuber</h6>
-//               <p>CEO</p>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="item">
-//           <p>
-//             The explanations are clear, the teachers are responsible and
-//             friendly, and the homework is real practice
-//           </p>
-//           <div className="user_info">
-//             <div className="user_avatar">
-//               <img src={Avatar} alt="" />
-//             </div>
-//             <div className="user_detail">
-//               <h6>Rob Zuber</h6>
-//               <p>CEO</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="arrows">
-//         <div className="prev">
-//           <img src={prev} alt="" />
-//         </div>
-//         <div className="next">
-//           <img src={next} alt="" />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Testimonials;
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Testimonials.css";
 import Avatar from "../../assets/avatar.svg";
 import prev from "../../assets/arrow-l.svg";
@@ -128,38 +27,67 @@ const testimonialsData = [
   },
   {
     text: "The course shows all the stages of the work of an SMM marketer. And also excellent practice",
-    name: "Michael ",
+    name: "Michael",
     role: "Cook",
   },
 ];
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = 4;
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const intervalRef = useRef(null);
+
+  const updateItemsPerPage = () => {
+    const width = window.innerWidth;
+    if (width < 600) {
+      setItemsPerPage(1);
+    } else if (width < 840) {
+      setItemsPerPage(2);
+    } else if (width < 1100) {
+      setItemsPerPage(3);
+    } else {
+      setItemsPerPage(4);
+    }
+  };
+
+  const startAutoSlide = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev + itemsPerPage >= testimonialsData.length ? 0 : prev + 1
+      );
+    }, 3000);
+  };
 
   const prevSlide = () => {
     setCurrentIndex((prev) =>
       prev === 0 ? testimonialsData.length - itemsPerPage : prev - 1
     );
+    startAutoSlide();
   };
 
   const nextSlide = () => {
     setCurrentIndex((prev) =>
       prev + itemsPerPage >= testimonialsData.length ? 0 : prev + 1
     );
+    startAutoSlide();
   };
+
+  useEffect(() => {
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    startAutoSlide();
+
+    return () => {
+      clearInterval(intervalRef.current);
+      window.removeEventListener("resize", updateItemsPerPage);
+    };
+  }, [itemsPerPage]);
 
   const visibleItems = testimonialsData.slice(
     currentIndex,
     currentIndex + itemsPerPage
   );
-  useEffect(() => {
-    setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev + itemsPerPage >= testimonialsData.length ? 0 : prev + 1
-      );
-    }, 3000);
-  });
 
   return (
     <div className="testimonials">
@@ -193,12 +121,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
-
-
-
-
-
-
-
-

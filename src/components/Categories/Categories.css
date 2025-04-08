@@ -58,3 +58,32 @@
     font-size: 12px;
     color: #1E1E2F;
 }
+
+@media (max-width:880px) {
+    .categories h5 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width:800px) {
+    .categories_card {
+        flex-wrap: wrap;
+    }
+
+    .categories_card .card_item {
+        width: 35%;
+    }
+}
+
+@media (max-width:700px) {
+    .categories .tab_head {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+@media (max-width:500px) {
+    .categories_card .card_item {
+        width: 46%;
+    }
+}
