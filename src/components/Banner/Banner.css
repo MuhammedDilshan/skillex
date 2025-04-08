@@ -1,8 +1,12 @@
+.spotlight {
+    position: relative;
+}
+
 .banner {
-    padding-top: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100vh;
 }
 
 .banner .banner_textContainer {
@@ -24,6 +28,7 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 4px 0px;
     position: relative;
     z-index: 99;
+
 }
 
 .banner .passion input {
@@ -32,14 +37,22 @@
     outline: none;
     font-size: 20px;
     color: #1E1E2F;
+    position: relative;
 }
 
 .banner .passion .go_btn {
+    position: absolute;
     background-color: #97C680;
     padding: 24px 32px;
     color: #1E1E2F;
     font-size: 20px;
     font-weight: 600;
+    right: 0;
+}
+
+.banner .passion .go_btn:hover {
+    background-color: #FEBA88;
+    cursor: pointer;
 }
 
 
@@ -47,38 +60,61 @@
     width: 65%;
     display: flex;
     align-items: center;
-    gap: 20px;
+    height: 600px;
 }
 
 .banner_ImgContainer .image_box {
-    width: 50%;
+    width: 25%;
     position: relative;
     transition: transform 0.4s ease, width 0.4s ease;
     overflow: hidden;
     border-radius: 20px;
-    height: 400px;
+    height: 100%;
+    margin: 0 10px !important;
 }
 
-.banner_ImgContainer .image_box:nth-child(2),
-.banner_ImgContainer .image_box:nth-child(3) {
-    width: 25%;
-    height: 300px;
+.banner_ImgContainer .image_box::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    position: absolute;
+    top: 0;
+
 }
 
 .banner_ImgContainer .image_box img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     transition: transform 0.4s ease;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
-.banner_ImgContainer .image_box .inside_text {
+.banner_ImgContainer .image_box.hovered .inside_text {
     position: absolute;
     bottom: 20px;
     left: 50px;
     display: flex;
     justify-content: space-between;
     width: 70%;
+    z-index: 77;
+    background: none;
+    transform: rotate(0);
+}
+
+.banner_ImgContainer .image_box .inside_text {
+    position: absolute;
+    bottom: 60px;
+    left: -15px;
+    padding: 16px;
+    width: 50%;
+    z-index: 77;
+    background: #1E1E2F;
+    transform: rotate(-90deg);
+    transition: .3s ease
 }
 
 .banner_ImgContainer .image_box .inside_text h6 {
@@ -98,10 +134,10 @@
 }
 
 
-.banner_ImgContainer .image_box:hover {
-    transform: scale(1.1);
-    z-index: 2;
-    width: 50% !important;
+.banner_ImgContainer .image_box.hovered {
+    transform: scaleX(1.1);
+    width: 100% !important;
+    margin: 0 30px !important;
 }
 
 @media (max-width:800px) {
@@ -112,6 +148,7 @@
     .banner .banner_textContainer {
         width: 100%;
         margin-bottom: 20px;
+        margin-top: 100px;
     }
 
     .banner .banner_textContainer .main_text {
@@ -119,8 +156,7 @@
     }
 
     .banner .passion {
-        justify-content: center;
-        position: unset;
+
         width: 65%;
         margin: 0 auto;
     }
